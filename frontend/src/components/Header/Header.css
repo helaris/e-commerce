@@ -1,0 +1,31 @@
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav__menu {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100vh;
+    opacity: 1;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: -1000px;
+    background-color: red;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    z-index: 2;
+}
+
+.active {
+    right: 0;
+}
