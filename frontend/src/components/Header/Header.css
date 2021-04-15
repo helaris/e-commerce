@@ -4,10 +4,10 @@
 }
 
 .nav__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .nav__links {
@@ -17,4 +17,11 @@
 
 .nav__links li {
   margin-right: 10px;
+}
+
+@media (min-width: 481px) {
+  .header__container {
+    width: 90%;
+    margin: 10px auto;
+  }
 }

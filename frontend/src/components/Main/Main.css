@@ -8,11 +8,11 @@
 }
 
 .main__container-header::after {
-  content: '';
+  content: "";
   display: block;
   width: 115px;
   height: 4px;
-  background-color: rgba(0, 0, 0, 0.616);
+  background-color: rgba(0, 0, 0, 0.9);
   margin: 5px auto;
   border-radius: 4px;
 }

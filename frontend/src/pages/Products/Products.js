@@ -7,7 +7,7 @@ import "./Products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
-  const pageLimit = 5;
+  const pageLimit = 12;
   const [page, setPage] = useState(1);
 
   // useEffect(() => {
@@ -67,16 +67,18 @@ const Products = () => {
           placeholder="Keywords 'salad', 'fish' etc..."
         />
       </section>
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          description={product.description}
-          defaultImage={product.defaultImage}
-          price={product.price}
-        />
-      ))}
+      <div className="products">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            description={product.description}
+            defaultImage={product.defaultImage}
+            price={product.price}
+          />
+        ))}
+      </div>
       <div className="product__pagination">
         <button disabled={page === 1} onClick={handlePrevButton}>
           Prev
