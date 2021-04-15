@@ -1,29 +1,17 @@
-import React, {useState, useEffect} from 'react'
-import backend from '../../api';
+import React from 'react'
+import { Link } from 'react-router-dom';
+// import backend from '../../api';
+import bannerImg from '../../images/banner.jpg';
+
+import './Banner.css';
 
 const Banner = () => {
-    const [recommended, setRecommended] = useState([]);
-    const [error, setError] = useState(false)
-
-    useEffect(() => {
-        async function fetchData() {
-          const request = await backend.get("/recommendeds")
-            .then(response => {
-                setRecommended(response.data[Math.floor(Math.random() * response.data.length - 1)])
-            })
-            .catch(err => {
-              console.log(err.message);
-              setError(true);
-            })
-          return request;
-        }
-        fetchData();
-      }, []);
-
-      console.log(recommended)
     return (
-        <div>
-            <h1>test</h1>
+        <div className="banner">
+            <div className="banner__content">
+                <h1>Looking for something specific?</h1>
+                <Link to="/products">Check out our products</Link>
+            </div>
         </div>
     )
 }
