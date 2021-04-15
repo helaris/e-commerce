@@ -1,11 +1,13 @@
 .header__container {
   margin: 10px;
+  height: 6vh;
 }
 
 .nav__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .nav__links {

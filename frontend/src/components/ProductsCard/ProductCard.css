@@ -1,6 +1,6 @@
 .card {
     max-width: 350px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     transition: 0.3s;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -51,11 +51,11 @@
     cursor: pointer;
 }
 
-.card__actions button:hover {
+/* .card__actions button:hover {
 color: white;
 background-color: red;
 }
 .card__actions a:hover {
 color: white;
 background-color: red;
-}
+} */

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import backend from '../../api';
-import ProductCard from '../Products/ProductCard';
+import ProductCard from '../ProductsCard/ProductCard';
 
 import './Main.css';
 
@@ -24,11 +24,9 @@ const Main = () => {
         fetchData();
       }, []);
 
-      console.log(recommended)
-
   return (
-    <section>
-      <h1>Our bestsellers</h1>
+    <section className="main__container">
+      <h1 className="main__container-header">Our bestsellers</h1>
       <div className="main__products">
         {recommended.map(product => (
             <ProductCard 

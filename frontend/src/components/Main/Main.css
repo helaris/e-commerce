@@ -1,4 +1,26 @@
+.main__container {
+  margin: 50px 0;
+}
+
+.main__container-header {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.main__container-header::after {
+  content: '';
+  display: block;
+  width: 115px;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.616);
+  margin: 5px auto;
+  border-radius: 4px;
+}
+
 .main__products {
+  /* display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
