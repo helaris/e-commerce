@@ -43,7 +43,7 @@
     padding: 20px 0;
 }
 
-.card__actions a, button {
+.card__actions a {
     padding: 12px 28px;
     border-radius: 5px;
     border: 1px solid black;
@@ -51,11 +51,10 @@
     cursor: pointer;
 }
 
-/* .card__actions button:hover {
-color: white;
-background-color: red;
+.card__actions button {
+    padding: 12px 28px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: transparent;
+    cursor: pointer;
 }
-.card__actions a:hover {
-color: white;
-background-color: red;
-} */

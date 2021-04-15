@@ -6,12 +6,28 @@ import "./Products.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState("");
+  const pageLimit = 5;
+  const [page, setPage] = useState(1);
 
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const request = await backend
+  //       .get("/products")
+  //       .then((response) => {
+  //         setProducts(response.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err.message);
+  //       });
+  //     return request;
+  //   }
+  //   fetchData();
+  // }, []);
   useEffect(() => {
     async function fetchData() {
       const request = await backend
-        .get("/products")
+        .get(`/products?q=${keyword}&_page=${page}&_limit=${pageLimit}`)
         .then((response) => {
           setProducts(response.data);
         })
@@ -21,26 +37,19 @@ const Products = () => {
       return request;
     }
     fetchData();
-  }, []);
+  }, [page, keyword]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const request = await backend
-        .get(`/products?q=${keyword}`)
-        .then((response) => {
-          setProducts(response.data);
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
-      return request;
-    }
-    fetchData();
-  }, [keyword]);
+  const handleNextButton = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrevButton = () => {
+    setPage(page - 1);
+  };
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
-  }
+  };
 
   return (
     <div className="products__container">
@@ -49,9 +58,15 @@ const Products = () => {
         bannerHeader="Products for every taste"
         bannerParagraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi facilis ex nam possimus!"
       />
-      <form>
-        <input onChange={handleChange} type="text" placeholder="Search for keywords..."/>
-      </form>
+
+      <section className="search__field">
+        <h2>Search for products</h2>
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Keywords 'salad', 'fish' etc..."
+        />
+      </section>
       {products.map((product) => (
         <ProductCard
           key={product.id}
@@ -62,6 +77,12 @@ const Products = () => {
           price={product.price}
         />
       ))}
+      <div className="product__pagination">
+        <button disabled={page === 1} onClick={handlePrevButton}>
+          Prev
+        </button>
+        <button onClick={handleNextButton}>Next</button>
+      </div>
     </div>
   );
 };
