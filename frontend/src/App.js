@@ -15,7 +15,12 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Header />
-            <Banner />
+            <Banner 
+            backgroundImage="https://images.unsplash.com/photo-1607083205410-7e6835ffd235?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+            bannerHeader="Summer sale on it's way!"
+            bannerParagraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi facilis ex nam possimus!"
+            homePageBanner
+            />
             <Main />
           </Route>
           <Route exact path="/products">
