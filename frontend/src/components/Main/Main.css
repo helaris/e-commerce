@@ -18,10 +18,23 @@
 }
 
 .main__products {
-  /* display: grid;
+  display: grid;
   grid-template-columns: 1fr;
-  justify-items: center; */
-  display: flex;
+  justify-items: center;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
+}
+
+@media (min-width: 620px) {
+  .main__products {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 970px) {
+  .main__products {
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+  }
 }
