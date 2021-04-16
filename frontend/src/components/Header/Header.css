@@ -21,7 +21,6 @@
   color: var(--white);
   -webkit-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 3px 7px -1px rgba(0, 0, 0, 0.5);
-  padding: 5px 0;
 }
 
 .nav__links {
@@ -47,6 +46,13 @@
 
   .nav__links a {
     font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__container {
+    padding: 0px 50px;
+    height: 7vh;
   }
 }
 

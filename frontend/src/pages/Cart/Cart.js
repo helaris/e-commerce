@@ -34,57 +34,58 @@ const Cart = ({ cart, amountOfItems, setCart }) => {
         bannerHeader="Shopping Cart"
         shoppingCart
       />
-
-      {cart.length === 0 ? (
-        <section className="cart__empty">
-          <h2>Your cart is currently empty</h2>
-          <Link to="/products">Go Shopping</Link>
-        </section>
-      ) : (
-        <div className="cart__items-container">
-          <table className="cart__table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Product</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody className="table__style">
-              {filtered?.map((item) => (
-                <tr key={item.id}>
-                  <td>
-                    <img
-                      src={item.defaultImage}
-                      alt="Car"
-                      className="cart__img"
-                    />
-                  </td>
-                  <td>
-                    {item.name}
-                    <br /> Quantity: {amountOfItems(item.id)}
-                  </td>
-                  <td>${Math.ceil(item.price) * amountOfItems(item.id)}</td>
-                  <td>
-                    <button
-                      className="cart__delete-btn"
-                      onClick={() => removeFromCart(item)}
-                    >
-                      <FaTrash />
-                    </button>
-                  </td>
+      <div className="test">
+        {cart.length === 0 ? (
+          <section className="cart__empty">
+            <h2>Your cart is currently empty</h2>
+            <Link to="/products">Go Shopping</Link>
+          </section>
+        ) : (
+          <div className="cart__items-container">
+            <table className="cart__table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Product</th>
+                  <th>Price</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="alignment">
-            <div className="back__shopping">
-              <Link to="/products">Back To Shopping</Link>
+              </thead>
+              <tbody className="table__style">
+                {filtered?.map((item) => (
+                  <tr key={item.id}>
+                    <td>
+                      <img
+                        src={item.defaultImage}
+                        alt="Car"
+                        className="cart__img"
+                      />
+                    </td>
+                    <td>
+                      {item.name}
+                      <br /> Quantity: {amountOfItems(item.id)}
+                    </td>
+                    <td>${Math.ceil(item.price) * amountOfItems(item.id)}</td>
+                    <td>
+                      <button
+                        className="cart__delete-btn"
+                        onClick={() => removeFromCart(item)}
+                      >
+                        <FaTrash />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="alignment">
+              <div className="back__shopping">
+                <Link to="/products">Back To Shopping</Link>
+              </div>
+              <p className="total">Total: ${Math.ceil(cartTotal)}</p>
             </div>
-            <p className="total">Total: ${Math.ceil(cartTotal)}</p>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 };

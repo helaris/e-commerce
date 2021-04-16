@@ -12,7 +12,8 @@
   display: block;
   width: 115px;
   height: 4px;
-  background-color: rgba(38, 70, 111, 0.8);
+  background-color: var(--blue);
+  opacity: 0.9;
   margin: 5px auto;
   border-radius: 4px;
 }

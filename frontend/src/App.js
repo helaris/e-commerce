@@ -8,6 +8,7 @@ import CartPage from "./pages/Cart/Cart";
 import Main from "./components/Main/Main";
 
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -57,6 +58,7 @@ function App() {
           </Route>
           <Route exact path="/products/:id" component={ProductDetail}></Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

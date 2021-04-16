@@ -93,6 +93,10 @@
   justify-content: space-between;
 }
 
+.test {
+  min-height: 62vh;
+}
+
 @media (min-width: 1024px) {
   .cart__items-container {
     width: 80%;
@@ -104,5 +108,10 @@
   .cart__items-container {
     width: 70%;
     margin: auto;
+  }
+
+  .test {
+    min-height: 60vh;
+    overflow-x: scroll;
   }
 }
