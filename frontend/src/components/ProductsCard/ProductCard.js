@@ -30,8 +30,12 @@ const ProductCard = ({
       </div>
       <footer>
         <div className="card__actions">
-          <Link to={`/products/${id}`}>View Details</Link>
-          <button onClick={() => addToCart(product)}>Add to cart</button>
+          <Link className="btn" to={`/products/${id}`}>
+            View Details
+          </Link>
+          <button className="btn" onClick={() => addToCart(product)}>
+            Add to cart
+          </button>
         </div>
       </footer>
     </article>

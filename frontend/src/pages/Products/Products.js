@@ -68,10 +68,16 @@ const Products = ({ addToCart }) => {
         ))}
       </div>
       <div className="product__pagination">
-        <button disabled={page === 1} onClick={handlePrevButton}>
+        <button
+          className="btn"
+          disabled={page === 1}
+          onClick={handlePrevButton}
+        >
           Prev
         </button>
-        <button onClick={handleNextButton}>Next</button>
+        <button className="btn" onClick={handleNextButton}>
+          Next
+        </button>
       </div>
     </div>
   );

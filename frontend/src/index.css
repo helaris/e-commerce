@@ -59,3 +59,29 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 5px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn:disabled {
+  background-color: #cccccc73;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background-color: #cccccc73;
+  color: #666666;
+}

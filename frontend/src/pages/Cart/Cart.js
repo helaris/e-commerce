@@ -34,11 +34,13 @@ const Cart = ({ cart, amountOfItems, setCart }) => {
         bannerHeader="Shopping Cart"
         shoppingCart
       />
-      <div className="test">
+      <div className="cart__height">
         {cart.length === 0 ? (
           <section className="cart__empty">
             <h2>Your cart is currently empty</h2>
-            <Link to="/products">Go Shopping</Link>
+            <Link className="btn" to="/products">
+              Go Shopping
+            </Link>
           </section>
         ) : (
           <div className="cart__items-container">
@@ -79,7 +81,9 @@ const Cart = ({ cart, amountOfItems, setCart }) => {
             </table>
             <div className="alignment">
               <div className="back__shopping">
-                <Link to="/products">Back To Shopping</Link>
+                <Link className="btn" to="/products">
+                  Back To Shopping
+                </Link>
               </div>
               <p className="total">Total: ${Math.ceil(cartTotal)}</p>
             </div>

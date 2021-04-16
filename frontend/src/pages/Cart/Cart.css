@@ -68,20 +68,6 @@
   align-self: flex-start;
 }
 
-.back__shopping a {
-  padding: 12px 28px;
-  border-radius: 5px;
-  border: 1px solid var(--blue);
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.back__shopping a:hover {
-  transition: all 0.3s ease-in-out;
-  background-color: var(--blue);
-  color: var(--white);
-}
-
 .total {
   font-size: 1.25rem;
   align-self: flex-end;
@@ -91,10 +77,11 @@
 .alignment {
   display: flex;
   justify-content: space-between;
+  height: 30px;
 }
 
-.test {
-  min-height: 62vh;
+.cart__height {
+  min-height: 70vh;
 }
 
 @media (min-width: 1024px) {
@@ -110,8 +97,8 @@
     margin: auto;
   }
 
-  .test {
-    min-height: 60vh;
+  .cart__height {
+    min-height: 70vh;
     overflow-x: scroll;
   }
 }
