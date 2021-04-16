@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import Banner from "../../components/Banner/Banner";
+import { FaTrash } from "react-icons/fa";
 import "./Cart.css";
 
 const Cart = ({ cart, amountOfItems, setCart }) => {
   let ids = cart.map((o) => o.id);
   let filtered = cart.filter(({ id }, index) => !ids.includes(id, index + 1));
 
-  console.log("oooooweeee", filtered);
   const cartTotal = cart.reduce((total, { price = 0 }) => total + price, 0);
 
   const removeFromCart = (item) => {
@@ -24,18 +26,22 @@ const Cart = ({ cart, amountOfItems, setCart }) => {
       ];
     });
   };
-  // console.log("filtered", filterDuplicates);
 
   return (
-    <div className="cart__container">
-      <section className="cart__text">
-        <h1>Shopping Cart</h1>
-        {/* <p>{cartCount} items in your cart</p> */}
-      </section>
+    <section>
+      <Banner
+        backgroundImage="https://images.unsplash.com/photo-1556740772-1a741367b93e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+        bannerHeader="Shopping Cart"
+        shoppingCart
+      />
+
       {cart.length === 0 ? (
-        <h2 className="no__cart-items">Your cart is currently empty</h2>
+        <section className="cart__empty">
+          <h2>Your cart is currently empty</h2>
+          <Link to="/products">Go Shopping</Link>
+        </section>
       ) : (
-        <>
+        <div className="cart__items-container">
           <table className="cart__table">
             <thead>
               <tr>
@@ -44,7 +50,7 @@ const Cart = ({ cart, amountOfItems, setCart }) => {
                 <th>Price</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="table__style">
               {filtered?.map((item) => (
                 <tr key={item.id}>
                   <td>
@@ -60,16 +66,26 @@ const Cart = ({ cart, amountOfItems, setCart }) => {
                   </td>
                   <td>${Math.ceil(item.price) * amountOfItems(item.id)}</td>
                   <td>
-                    <button onClick={() => removeFromCart(item)}>Remove</button>
+                    <button
+                      className="cart__delete-btn"
+                      onClick={() => removeFromCart(item)}
+                    >
+                      <FaTrash />
+                    </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <h1>Total amount: ${Math.ceil(cartTotal)}</h1>
-        </>
+          <div className="alignment">
+            <div className="back__shopping">
+              <Link to="/products">Back To Shopping</Link>
+            </div>
+            <p className="total">Total: ${Math.ceil(cartTotal)}</p>
+          </div>
+        </div>
       )}
-    </div>
+    </section>
   );
 };
 

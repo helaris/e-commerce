@@ -5,9 +5,9 @@ import Header from "./components/Header/Header";
 import ProductsPage from "./pages/Products/Products";
 import ProductDetail from "./pages/Products/ProductDetail";
 import CartPage from "./pages/Cart/Cart";
+import Main from "./components/Main/Main";
 
 import "./App.css";
-import Main from "./components/Main/Main";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -33,9 +33,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Header cartCount={cartCount} />
         <Switch>
           <Route exact path="/">
-            <Header cartCount={cartCount} />
             <Banner
               backgroundImage="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
               bannerHeader="Summer sale on it's way!"
@@ -46,21 +46,16 @@ function App() {
             <Main addToCart={addToCart} />
           </Route>
           <Route exact path="/products">
-            <Header cartCount={cartCount} />
             <ProductsPage addToCart={addToCart} />
           </Route>
           <Route exact path="/cart">
-            <Header cartCount={cartCount} />
             <CartPage
               cart={cart}
               amountOfItems={amountOfItems}
               setCart={setCart}
             />
           </Route>
-          <Route exact path="/products/:id">
-            <Header cartCount={cartCount} />
-            <ProductDetail />
-          </Route>
+          <Route exact path="/products/:id" component={ProductDetail}></Route>
         </Switch>
       </Router>
     </div>
