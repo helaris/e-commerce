@@ -48,11 +48,10 @@ yarn start
 
 ## Some Visuals
 
-Preview one         |  Preview two
-:-------------------------:|:-------------------------:
-![Image one View](frontend/src/images/pic1.png)  |  ![Image two View](fronted/src/images/pic2.png)
+|                   Preview one                   |                   Preview two                   |
+| :---------------------------------------------: | :---------------------------------------------: |
+| ![Image one View](frontend/src/images/pic1.png) | ![Image two View](frontend/src/images/pic2.png) |
 
-
-Preview three            | 
-:-------------------------:|
-![Image two view](frontend/src/images/pic3.png)  | 
+|                  Preview three                  |
+| :---------------------------------------------: |
+| ![Image two view](frontend/src/images/pic3.png) |
