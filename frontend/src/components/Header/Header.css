@@ -1,13 +1,19 @@
 .header__container {
-  margin: 10px;
-  height: 6vh;
-}
-
-.nav__container {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  width: 100%;
+  padding: 20px;
+  z-index: 1;
+  height: 8vh;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+.nav__black {
+  background-color: #111;
+  color: #fff;
 }
 
 .nav__links {
@@ -18,10 +24,16 @@
 .nav__links li {
   margin-right: 10px;
 }
+.nav__links a {
+  font-size: 1.1rem;
+}
 
 @media (min-width: 481px) {
   .header__container {
-    width: 90%;
-    margin: 10px auto;
+    padding: 20px 50px;
+  }
+
+  .nav__links a {
+    font-size: 1.25rem;
   }
 }

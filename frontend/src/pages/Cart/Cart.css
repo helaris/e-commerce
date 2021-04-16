@@ -1,3 +1,6 @@
+.cart__container {
+  margin-top: 60px;
+}
 .cart__text {
   text-align: center;
 }
@@ -10,4 +13,9 @@
 
 .cart__img {
   width: 50px;
+}
+
+.no__cart-items {
+  text-align: center;
+  margin: 50px 0;
 }

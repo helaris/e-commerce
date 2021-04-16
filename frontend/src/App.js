@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Banner from "./components/Banner/Banner";
 import Header from "./components/Header/Header";
@@ -11,9 +11,24 @@ import Main from "./components/Main/Main";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const addToCart = (item) => setCart((currentCart) => [...currentCart, item]);
+  const addToCart = (item) => {
+    setCart((currentCart) => [...currentCart, item]);
+    console.log(cart);
+  };
   const cartCount = cart.length;
   const amountOfItems = (id) => cart.filter((item) => item.id === id).length;
+
+  useEffect(() => {
+    const data = localStorage.getItem("cart");
+
+    if (data) {
+      setCart(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  });
 
   return (
     <div className="App">
@@ -22,7 +37,7 @@ function App() {
           <Route exact path="/">
             <Header cartCount={cartCount} />
             <Banner
-              backgroundImage="https://bit.ly/3gb0hie"
+              backgroundImage="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
               bannerHeader="Summer sale on it's way!"
               bannerParagraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi facilis ex nam possimus!"
               homePageBanner
@@ -38,8 +53,8 @@ function App() {
             <Header cartCount={cartCount} />
             <CartPage
               cart={cart}
-              cartCount={cartCount}
               amountOfItems={amountOfItems}
+              setCart={setCart}
             />
           </Route>
           <Route exact path="/products/:id">

@@ -12,9 +12,9 @@ const ProductCard = ({
   product,
   addToCart,
 }) => {
-  const addProduct = () => {
-    addToCart(product);
-  };
+  // const addProduct = () => {
+  //   addToCart(product);
+  // };
 
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -35,7 +35,7 @@ const ProductCard = ({
       <footer>
         <div className="card__actions">
           <Link to={`/products/${id}`}>View Details</Link>
-          <button onClick={addProduct}>Add to cart</button>
+          <button onClick={() => addToCart(product)}>Add to cart</button>
         </div>
       </footer>
     </article>

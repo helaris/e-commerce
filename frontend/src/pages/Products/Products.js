@@ -40,7 +40,7 @@ const Products = ({ addToCart }) => {
   return (
     <div className="products__container">
       <Banner
-        backgroundImage="https://bit.ly/3uVwH4n"
+        backgroundImage="https://images.unsplash.com/photo-1522273400909-fd1a8f77637e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
         bannerHeader="Products for every taste"
         bannerParagraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi facilis ex nam possimus!"
       />
