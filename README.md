@@ -8,7 +8,7 @@ Before I started writing code, I thought it would be nice to have some kind of o
 
 ![Image of Trello](frontend/src/images/trello.png)
 
-Once I had a rough idea what I needed to do, I did a quick sketch of the layout. How I would want it to look. (It's not pretty I know, but it did the job)
+Once I had a rough idea what I needed to do, I did a quick sketch of the layout. How I would want it to look. (It's not a pretty sketch I know, but it did the job). I started mobile first with the design.
 
 ![Image of Sketch](frontend/src/images/sketch.jpg)
 

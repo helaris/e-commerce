@@ -7,8 +7,10 @@ import "./Products.css";
 const Products = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
-  const pageLimit = 12;
   const [page, setPage] = useState(1);
+  const [error, setError] = useState(false);
+
+  const pageLimit = 12;
 
   useEffect(() => {
     async function fetchData() {
@@ -19,6 +21,7 @@ const Products = ({ addToCart }) => {
         })
         .catch((err) => {
           console.log(err.message);
+          setError(true);
         });
       return request;
     }
@@ -44,7 +47,6 @@ const Products = ({ addToCart }) => {
         bannerHeader="Products for every taste"
         bannerParagraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi facilis ex nam possimus!"
       />
-
       <section className="search__field">
         <h2>Search for products</h2>
         <input
@@ -53,32 +55,42 @@ const Products = ({ addToCart }) => {
           placeholder="Keywords 'salad', 'fish' etc..."
         />
       </section>
-      <div className="products">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            description={product.description}
-            defaultImage={product.defaultImage}
-            price={product.price}
-            addToCart={addToCart}
-            product={product}
-          />
-        ))}
-      </div>
-      <div className="product__pagination">
-        <button
-          className="btn"
-          disabled={page === 1}
-          onClick={handlePrevButton}
-        >
-          Prev
-        </button>
-        <button className="btn" onClick={handleNextButton}>
-          Next
-        </button>
-      </div>
+      {error ? (
+        <h2 className="error">
+          Sorry something went wrong, please try again later.
+        </h2>
+      ) : (
+        <>
+          <div className="products">
+            <>
+              {products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  description={product.description}
+                  defaultImage={product.defaultImage}
+                  price={product.price}
+                  addToCart={addToCart}
+                  product={product}
+                />
+              ))}
+            </>
+          </div>
+          <div className="product__pagination">
+            <button
+              className="btn"
+              disabled={page === 1}
+              onClick={handlePrevButton}
+            >
+              Prev
+            </button>
+            <button className="btn" onClick={handleNextButton}>
+              Next
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

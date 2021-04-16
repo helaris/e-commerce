@@ -85,3 +85,8 @@ img {
   background-color: #cccccc73;
   color: #666666;
 }
+
+.error {
+  text-align: center;
+  margin: 100px auto;
+}
