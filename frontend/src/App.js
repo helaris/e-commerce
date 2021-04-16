@@ -37,7 +37,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Banner
-              backgroundImage="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+              backgroundImage="https://images.unsplash.com/photo-1607083205410-7e6835ffd235?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
               bannerHeader="Summer sale on it's way!"
               bannerParagraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam eligendi facilis ex nam possimus!"
               homePageBanner

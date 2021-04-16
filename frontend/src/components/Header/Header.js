@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import DarkLogo from "../../images/dark-logo.png";
+import LightLogo from "../../images/light-logo.png";
 import "./Header.css";
 
 const Header = ({ cartCount }) => {
@@ -18,9 +20,17 @@ const Header = ({ cartCount }) => {
   }, []);
   return (
     <header className={`header__container ${show && "nav__black"}`}>
-      <h1>
-        <Link to="/">LOGO</Link>
-      </h1>
+      <div className="logo">
+        {show ? (
+          <Link to="/">
+            <img src={LightLogo} alt="light logo" />
+          </Link>
+        ) : (
+          <Link to="/">
+            <img src={DarkLogo} alt="dark logo" />
+          </Link>
+        )}
+      </div>
       <nav>
         <ul className="nav__links">
           <li>

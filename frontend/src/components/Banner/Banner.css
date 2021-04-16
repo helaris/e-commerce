@@ -5,7 +5,7 @@
   object-fit: contain;
   -webkit-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.39);
   box-shadow: 0px 3px 7px -1px rgba(0, 0, 0, 0.5);
-  margin-top: 60px;
+  margin-top: 65px;
 }
 
 .banner__content {
@@ -29,9 +29,11 @@
 }
 
 .banner__content a {
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   padding: 12px 28px;
   margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .sc__height {
